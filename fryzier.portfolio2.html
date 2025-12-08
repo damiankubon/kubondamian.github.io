@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salon Fryzjerski Bella</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f0e8;
+            color: #333;
+        }
+        header {
+            position: relative;
+            height: 500px;
+            background: url('https://images.unsplash.com/photo-1600185360681-2e624e9f2b3f?auto=format&fit=crop&w=1500&q=80') center/cover no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+        header img.logo {
+            width: 150px;
+            border-radius: 50%;
+            padding: 5px;
+            background-color: white;
+            box-shadow: 0 0 15px rgba(0,0,0,0.4);
+            margin-bottom: 20px;
+        }
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.7);
+            margin: 0;
+        }
+        nav {
+            background-color: #a0522d;
+            text-align: center;
+            padding: 15px;
+        }
+        nav a {
+            color: white;
+            margin: 0 20px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #ffd700;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        h2 {
+            border-bottom: 3px solid #d2691e;
+            padding-bottom: 10px;
+            font-family: 'Playfair Display', serif;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #f0e6dc;
+        }
+        .opinie p {
+            font-style: italic;
+            line-height: 1.8;
+            font-size: 18px;
+        }
+        footer {
+            text-align: center;
+            padding: 30px;
+            background-color: #a0522d;
+            color: white;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="https://images.unsplash.com/photo-1588776814546-c1b0ed62f3e1?auto=format&fit=crop&w=150&q=80" alt="Logo Bella" class="logo">
+        <h1>Salon Fryzjerski Bella</h1>
+    </header>
+
+    <nav>
+        <a href="#uslugi">Usługi</a>
+        <a href="#opinie">Opinie</a>
+        <a href="#kontakt">Kontakt</a>
+    </nav>
+
+    <div class="container" id="uslugi">
+        <h2>Nasze usługi</h2>
+        <table>
+            <tr>
+                <th>Usługa</th>
+                <th>Opis</th>
+                <th>Cena</th>
+            </tr>
+            <tr>
+                <td>Strzyżenie damskie</td>
+                <td>Profesjonalne cięcie dopasowane do kształtu twarzy</td>
+                <td>80 zł</td>
+            </tr>
+            <tr>
+                <td>Strzyżenie męskie</td>
+                <td>Klasyczne i nowoczesne fryzury dla panów</td>
+                <td>50 zł</td>
+            </tr>
+            <tr>
+                <td>Koloryzacja</td>
+                <td>Farbowanie włosów z użyciem profesjonalnych kosmetyków</td>
+                <td>120-250 zł</td>
+            </tr>
+            <tr>
+                <td>Stylizacja i modelowanie</td>
+                <td>Fryzury na specjalne okazje i codziennie</td>
+                <td>70-150 zł</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="container" id="opinie">
+        <h2>Opinie naszych klientów</h2>
+        <div class="opinie">
+            <p>"Bella to najlepszy salon w Tarnowie! Profesjonalna obsługa i cudowna atmosfera." – Anna M.</p>
+            <p>"Zawsze wychodzę zadowolony, fryzura idealnie dopasowana." – Piotr K.</p>
+            <p>"Polecam każdemu, kto chce pięknych włosów i miłej obsługi." – Katarzyna W.</p>
+        </div>
+    </div>
+
+    <div class="container" id="kontakt">
+        <h2>Kontakt</h2>
+        <p><strong>Telefon:</strong> 14 555 123 456</p>
+        <p><strong>Email:</strong> kontakt@bella-tarnow.pl</p>
+        <p><strong>Adres:</strong> ul. Główna 45, 33-100 Tarnów</p>
+    </div>
+
+    <footer>
+        &copy; 2025 Salon Fryzjerski Bella – Wszystkie prawa zastrzeżone.
+    </footer>
+
+</body>
+</html>
