@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Trener Personalny – Damian</title>
+  <style>
+    :root{--accent:#0f1723;--cta:#ff6b35;--muted:#6b7280}
+    body{font-family:Inter, Arial, sans-serif;margin:0;background:#f7f8fb;color:#111}
+    .wrap{max-width:980px;margin:0 auto;padding:28px}
+    header{background:linear-gradient(90deg,#111 0%, rgba(17,24,35,0.85) 100%);color:#fff;padding:36px;border-radius:12px}
+    header h1{margin:0;font-size:28px}
+    header p{margin:8px 0 0;color:#d1d5db}
+    .grid{display:grid;grid-template-columns:1fr 320px;gap:20px;margin-top:20px}
+    .card{background:#fff;padding:18px;border-radius:10px;box-shadow:0 8px 24px rgba(15,23,42,0.06)}
+    .cta{display:inline-block;padding:10px 14px;background:var(--cta);color:#fff;border-radius:8px;text-decoration:none;font-weight:700}
+    .meta{color:var(--muted);font-size:14px;margin-top:8px}
+    .services{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:12px}
+    .service{background:#fff;border:1px solid #eef2f7;padding:12px;border-radius:8px}
+    .gallery{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
+    .gallery img{width:100%;max-width:140px;border-radius:8px;object-fit:cover}
+    footer{margin-top:30px;text-align:center;color:var(--muted);font-size:13px}
+    @media(max-width:880px){.grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>Trening z Damianem — Trener Personalny</h1>
+      <p>Indywidualne plany treningowe, treningi 1:1 oraz online. Popraw formę, redukcję i siłę.</p>
+    </header>
+
+    <div class="grid">
+      <div>
+        <div class="card">
+          <h2>O mnie</h2>
+          <p class="meta">Jestem pasjonatem treningu siłowego i kondycyjnego. Pomagam klientom osiągać cele przez prosty, bezpieczny i efektywny plan treningowy.</p>
+
+          <h3 style="margin-top:14px">Pakiety</h3>
+          <div class="services">
+            <div class="service"><strong>Start — 99 zł</strong><div class="meta">Plan 4 tygodnie + telefoniczne wsparcie</div></div>
+            <div class="service"><strong>Pro — 149 zł</strong><div class="meta">Plan + 2 sesje online + dieta (podstawy)</div></div>
+            <div class="service"><strong>Premium — 249 zł</strong><div class="meta">Plan + 4 sesje 1:1 + pełna dieta</div></div>
+            <div class="service"><strong>Online — 79 zł</strong><div class="meta">Plan + kontakt przez 30 dni</div></div>
+          </div>
+
+          <h3 style="margin-top:14px">Co dostajesz</h3>
+          <ul style="margin-top:6px">
+            <li>Indywidualny program</li>
+            <li>Progres tracking</li>
+            <li>Szybka komunikacja</li>
+          </ul>
+
+          <div style="margin-top:14px">
+            <a class="cta" href="mailto:kubondamian@gmail.com">Napisz: kubondamian@gmail.com</a>
+            <div class="meta" style="margin-top:8px">Telefon: 729 623 364</div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:14px">
+          <h3>Opinie / Rezultaty</h3>
+          <p class="meta">„Szybkie efekty i profesjonalne podejście — polecam.”</p>
+          <p class="meta">„Plan dopasowany do mojej pracy i grafiku.”</p>
+        </div>
+      </div>
+
+      <aside>
+        <div class="card">
+          <h3>Galeria</h3>
+          <div class="gallery">
+            <!-- Jeżeli nie masz zdjęć, możesz później podmienić na własne albo dodać linki do obrazków z internetu -->
+            <img src="trainer1.jpg" alt="trainer1">
+            <img src="trainer2.jpg" alt="trainer2">
+            <img src="trainer3.jpg" alt="trainer3">
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:12px">
+          <h3>Godziny</h3>
+          <p class="meta">Pn–Pt: 6:00–21:00 • Sb: 8:00–14:00</p>
+          <h3 style="margin-top:10px">Lokalizacja</h3>
+          <p class="meta">Tarnów / Trening w siłowni lub online</p>
+        </div>
+      </aside>
+    </div>
+
+    <footer>
+      © Damian Kuboń — Strony i usługi treningowe • Kontakt: 729 623 364
+    </footer>
+  </div>
+</body>
+</html>
