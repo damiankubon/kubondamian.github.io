@@ -1,231 +1,215 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Salon Fryzjerski Bella</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Salon Fryzjerski Bella</title>
 
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Roboto', sans-serif;
-            background-color: #f4f0e8;
-            color: #333;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto&display=swap" rel="stylesheet">
 
-        /* HEADER */
-        header {
-            position: relative;
-            height: 350px;
-            background: url('https://images.pexels.com/photos/3998425/pexels-photo-3998425.jpeg?auto=compress&cs=tinysrgb&w=1600') center/cover no-repeat;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            text-align: center;
-        }
-        header * { margin-top: 0; }
+<style>
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f0e8;
+    color: #333;
+}
 
-        header h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 52px;
-            text-shadow: 2px 2px 15px rgba(0,0,0,0.8);
-            margin-bottom: 5px;
-        }
-        header p {
-            font-size: 20px;
-            text-shadow: 2px 2px 10px rgba(0,0,0,0.7);
-        }
+/* ===== ANIMATIONS ===== */
+.fade {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeUp 1s ease forwards;
+}
+.delay1 { animation-delay: .2s; }
+.delay2 { animation-delay: .4s; }
+.delay3 { animation-delay: .6s; }
 
-        /* MENU */
-        nav {
-            background-color: #8B3E2F;
-            text-align: center;
-            padding: 14px;
-        }
-        nav a {
-            color: white;
-            margin: 0 20px;
-            font-weight: bold;
-            font-size: 18px;
-            text-decoration: none;
-        }
-        nav a:hover { color: #FFD28A; }
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
-        /* SEKCJE */
-        .container {
-            max-width: 1000px;
-            margin: 40px auto;
-            padding: 30px;
-            background-color: #fff;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-        }
-        h2 {
-            border-left: 8px solid #c27b45;
-            padding-left: 12px;
-            font-family: 'Playfair Display', serif;
-        }
+/* ===== BUTTON ===== */
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 14px 34px;
+    background: #c27b45;
+    color: white;
+    font-weight: bold;
+    border-radius: 40px;
+    text-decoration: none;
+    transition: all .3s ease;
+    box-shadow: 0 10px 25px rgba(0,0,0,.25);
+}
+.btn:hover {
+    background: #a86434;
+    transform: translateY(-3px);
+}
 
-        /* GALERIA */
-        .galeria {
-            margin-top: 25px;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 18px;
-        }
-        .galeria img {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
-            border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-            transition: transform 0.3s;
-        }
-        .galeria img:hover {
-            transform: scale(1.05);
-        }
+/* ===== HEADER ===== */
+header {
+    height: 380px;
+    background: linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)),
+    url('https://images.pexels.com/photos/3998425/pexels-photo-3998425.jpeg') center/cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 52px;
+}
+header p {
+    font-size: 20px;
+    max-width: 600px;
+}
 
-        /* TABELA USŁUG */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-        th, td {
-            padding: 14px;
-            border: 1px solid #ddd;
-        }
-        th {
-            background-color: #f1e1d2;
-        }
+/* ===== NAV ===== */
+nav {
+    background: #8B3E2F;
+    padding: 14px;
+    text-align: center;
+}
+nav a {
+    color: white;
+    margin: 0 18px;
+    font-weight: bold;
+    text-decoration: none;
+}
+nav a:hover { color: #FFD28A; }
 
-        /* OPINIE */
-        .opinie p {
-            font-style: italic;
-            font-size: 18px;
-            margin-bottom: 15px;
-            border-left: 4px solid #c27b45;
-            padding-left: 15px;
-        }
+/* ===== SECTIONS ===== */
+.section {
+    max-width: 1100px;
+    margin: 60px auto;
+    background: white;
+    padding: 50px;
+    border-radius: 18px;
+    box-shadow: 0 10px 35px rgba(0,0,0,.12);
+}
 
-        /* STOPKA */
-        footer {
-            text-align: center;
-            padding: 30px;
-            background-color: #8B3E2F;
-            color: white;
-            margin-top: 40px;
-        }
+h2 {
+    font-family: 'Playfair Display', serif;
+    border-left: 6px solid #c27b45;
+    padding-left: 14px;
+}
 
-        /* MAPA */
-        iframe {
-            width: 100%;
-            height: 350px;
-            border: none;
-            border-radius: 15px;
-            margin-top: 20px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
-        }
-    </style>
+/* ===== GALLERY ===== */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+.gallery img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 14px;
+    transition: transform .4s ease;
+}
+.gallery img:hover { transform: scale(1.05); }
+
+/* ===== TABLE ===== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 25px;
+}
+th, td {
+    padding: 14px;
+    border: 1px solid #ddd;
+}
+th { background: #f1e1d2; }
+
+/* ===== OPINIONS ===== */
+.opinion {
+    font-style: italic;
+    margin-bottom: 18px;
+    border-left: 4px solid #c27b45;
+    padding-left: 15px;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    background: #8B3E2F;
+    color: white;
+    text-align: center;
+    padding: 30px;
+}
+</style>
 </head>
+
 <body>
 
-    <header> 
-        <h1>Barber, któremu możesz zaufać</h1>
-<p>Precyzyjne strzyżenie, styl i atmosfera, do której chce się wracać</p>
-<a href="#kontakt" class="btn">Umów wizytę</a>
-    </header>
+<header>
+    <h1 class="fade">Barber, któremu możesz zaufać</h1>
+    <p class="fade delay1">Precyzyjne strzyżenie, styl i atmosfera, do której chce się wracać</p>
+    <a href="#kontakt" class="btn fade delay2">Umów wizytę</a>
+</header>
 
-    <nav>
-        <a href="#galeria">Galeria</a>
-        <a href="#uslugi">Usługi</a>
-        <a href="#opinie">Opinie</a>
-        <a href="#kontakt">Kontakt</a>
-    </nav>
+<nav>
+    <a href="#galeria">Galeria</a>
+    <a href="#uslugi">Usługi</a>
+    <a href="#opinie">Opinie</a>
+    <a href="#kontakt">Kontakt</a>
+</nav>
 
-    <!-- GALERIA -->
-    <div class="container" id="galeria">
-        <h2>Galeria</h2>
-
-        <div class="galeria">
-            <img src="https://images.pexels.com/photos/3998421/pexels-photo-3998421.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Barber 1">
-            <img src="https://images.pexels.com/photos/3998427/pexels-photo-3998427.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Barber 2">
-            <img src="https://images.pexels.com/photos/3998425/pexels-photo-3998425.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Barber 3">
-            <img src="https://images.pexels.com/photos/1813272/pexels-photo-1813272.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Barber 4">
-        </div>
+<section class="section fade" id="galeria">
+    <h2>Galeria</h2>
+    <div class="gallery">
+        <img src="https://images.pexels.com/photos/3998421/pexels-photo-3998421.jpeg">
+        <img src="https://images.pexels.com/photos/3998427/pexels-photo-3998427.jpeg">
+        <img src="https://images.pexels.com/photos/3998425/pexels-photo-3998425.jpeg">
+        <img src="https://images.pexels.com/photos/1813272/pexels-photo-1813272.jpeg">
     </div>
+</section>
 
-    <!-- USŁUGI -->
-    <div class="container" id="uslugi">
-          <h2>Nasza oferta</h2>
-<p>Kompleksowe usługi barberskie na najwyższym poziomie</p>
- 
-        <table>
-            <tr>
-                <th>Usługa</th>
-                <th>Opis</th>
-                <th>Cena</th>
-            </tr>
-            <tr>
-                <td>Strzyżenie damskie</td>
-                <td>Stylizacja dopasowana do rysów twarzy</td>
-                <td>80–120 zł</td>
-            </tr>
-            <tr>
-                <td>Strzyżenie męskie</td>
-                <td>Klasyczne i nowoczesne cięcia</td>
-                <td>50 zł</td>
-            </tr>
-            <tr>
-                <td>Koloryzacja</td>
-                <td>Farby premium, trwały efekt</td>
-                <td>150–300 zł</td>
-            </tr>
-            <tr>
-                <td>Upięcia okolicznościowe</td>
-                <td>Fryzury ślubne, wieczorowe, okazjonalne</td>
-                <td>150–250 zł</td>
-            </tr>
-            </tr>
-            <h3>Stylizacja brody</h3>
-<p>Modelowanie, konturowanie i pielęgnacja brody z dbałością o każdy detal.</p>
+<section class="section fade" id="uslugi">
+    <h2>Nasza oferta</h2>
+    <p>Kompleksowe usługi barberskie na najwyższym poziomie</p>
 
-        </table>
-    </div>
-<p><strong>✔ Doświadczenie</strong> • <strong>✔ Indywidualne podejście</strong> • <strong>✔ Profesjonalne kosmetyki</strong></p>
-<a href="#kontakt" class="btn">Zarezerwuj termin</a>
+    <table>
+        <tr><th>Usługa</th><th>Opis</th><th>Cena</th></tr>
+        <tr><td>Strzyżenie męskie</td><td>Klasyczne i nowoczesne cięcia</td><td>50 zł</td></tr>
+        <tr><td>Stylizacja brody</td><td>Modelowanie i pielęgnacja</td><td>40 zł</td></tr>
+        <tr><td>Koloryzacja</td><td>Farby premium</td><td>150–300 zł</td></tr>
+    </table>
 
-    <!-- OPINIE -->
-    <div class="container" id="opinie">
-        <h2>Opinie klientów</h2>
+    <p><b>✔ Doświadczenie</b> • <b>✔ Indywidualne podejście</b> • <b>✔ Profesjonalne kosmetyki</b></p>
+    <a href="#kontakt" class="btn">Zarezerwuj termin</a>
+</section>
 
-        <div class="opinie">
-            <p>“Najlepszy salon w mieście! Profesjonalizm na każdym kroku.” – Anna M.</p>
-            <p>“Świetna atmosfera i perfekcyjne cięcie. Polecam!” – Piotr K.</p>
-            <p>“Za każdym razem wychodzę zachwycona.” – Katarzyna W.</p>
-        </div>
-    </div>
+<section class="section fade" id="opinie">
+    <h2>Opinie klientów</h2>
+    <p class="opinion">“Najlepszy barber w mieście!” – Piotr</p>
+    <p class="opinion">“Profesjonalnie i z klasą.” – Michał</p>
+    <p class="opinion">“Wracam regularnie.” – Tomasz</p>
+</section>
 
-    <!-- KONTAKT -->
-    <div class="container" id="kontakt">
-        <h2>Kontakt</h2>
+<section class="section fade" id="kontakt">
+    <h2>Kontakt</h2>
+    <p><b>Telefon:</b> 555 123 456</p>
+    <p><b>Adres:</b> ul. Główna 45, Tarnów</p>
 
-        <p><strong>Telefon:</strong> 14 555 123 456</p>
-        <p><strong>Email:</strong> kontakt@bella-salon.pl</p>
-        <p><strong>Adres:</strong> ul. Główna 45, 33-100 Tarnów</p>
+    <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2563.448013829994!2d20.986375!3d50.012345"
+        width="100%" height="320" style="border-radius:15px;border:0;" loading="lazy">
+    </iframe>
+</section>
 
-        <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2563.448013829994!2d20.986375!3d50.012345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4715bd123456789%3A0xabcdef123456789!2sTarnów!5e0!3m2!1spl!2spl!4v1700000000000">
-        </iframe>
-    </div>
-
-    <footer>
-        © 2025 Salon Fryzjerski Bella – Wszystkie prawa zastrzeżone.
-    </footer>
+<footer>
+    © 2025 Salon Fryzjerski Bella
+</footer>
 
 </body>
 </html>
+ 
  
