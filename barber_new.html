@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+   <!DOCTYPE html>
 <html lang="pl">
 <head>
 <meta charset="UTF-8">
@@ -137,6 +137,13 @@ th { background: #f1e1d2; }
     padding-left: 15px;
 }
 
+/* ===== MAP ===== */
+.map-box {
+    margin-top: 20px;
+    overflow: hidden;
+    border-radius: 18px;
+}
+
 /* ===== FOOTER ===== */
 footer {
     background: #8B3E2F;
@@ -165,10 +172,10 @@ footer {
 <section class="section fade" id="galeria">
     <h2>Galeria</h2>
     <div class="gallery">
-        <img src="https://images.pexels.com/photos/3998421/pexels-photo-3998421.jpeg">
-        <img src="https://images.pexels.com/photos/3998427/pexels-photo-3998427.jpeg">
-        <img src="https://images.pexels.com/photos/3998425/pexels-photo-3998425.jpeg">
-        <img src="https://images.pexels.com/photos/1813272/pexels-photo-1813272.jpeg">
+        <img src="https://images.pexels.com/photos/3998421/pexels-photo-3998421.jpeg" class="fade delay1">
+        <img src="https://images.pexels.com/photos/3998427/pexels-photo-3998427.jpeg" class="fade delay2">
+        <img src="https://images.pexels.com/photos/3998425/pexels-photo-3998425.jpeg" class="fade delay3">
+        <img src="https://images.pexels.com/photos/1813272/pexels-photo-1813272.jpeg" class="fade delay1">
     </div>
 </section>
 
@@ -184,29 +191,32 @@ footer {
     </table>
 
     <p><b>✔ Doświadczenie</b> • <b>✔ Indywidualne podejście</b> • <b>✔ Profesjonalne kosmetyki</b></p>
-    <a href="#kontakt" class="btn">Zarezerwuj termin</a>
+    <a href="#kontakt" class="btn fade delay2">Zarezerwuj termin</a>
 </section>
 
 <section class="section fade" id="opinie">
     <h2>Opinie klientów</h2>
-    <p class="opinion">“Najlepszy barber w mieście!” – Piotr</p>
-    <p class="opinion">“Profesjonalnie i z klasą.” – Michał</p>
-    <p class="opinion">“Wracam regularnie.” – Tomasz</p>
+    <p class="opinion fade delay1">“Najlepszy barber w mieście!” – Piotr</p>
+    <p class="opinion fade delay2">“Profesjonalnie i z klasą.” – Michał</p>
+    <p class="opinion fade delay3">“Wracam regularnie.” – Tomasz</p>
 </section>
 
 <section class="section fade" id="kontakt">
     <h2>Kontakt</h2>
-    <p><b>Telefon:</b> 555 123 456</p>
-    <p><b>Adres:</b> ul. Główna 45, Tarnów</p>
+    <p class="fade delay1"><b>Telefon:</b> 555 123 456</p>
+    <p class="fade delay2"><b>Adres:</b> ul. Główna 45, Tarnów</p>
 
-<div class="map-box">
-    <iframe 
-        src="https://www.google.com/maps?q=Tarnów,+ul.+Główna+45&output=embed"
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade">
-    </iframe>
-</div>
-    
+    <div class="map-box fade delay3">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2579.9409653603946!2d20.98507261592913!3d50.01209517942102!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471653d7e9d5d22d%3A0x1b91f85f7a05f2d2!2sG%C5%82%C3%B3wna%2045%2C%2043-100%20Tarn%C3%B3w!5e0!3m2!1spl!2spl!4v1700000000000!5m2!1spl!2spl" 
+            width="100%" 
+            height="400" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
 </section>
 
 <footer>
@@ -215,5 +225,4 @@ footer {
 
 </body>
 </html>
- 
- 
+
