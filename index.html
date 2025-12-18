@@ -9,11 +9,14 @@
 
 <style>
 :root{
-  --bg:#f5f7fb;
+  --bg:#f6f7fb;
   --dark:#0f172a;
   --card:#ffffff;
   --muted:#64748b;
-  --accent:#6366f1;
+
+  --grad1: linear-gradient(135deg,#6366f1,#8b5cf6);
+  --grad2: linear-gradient(135deg,#22d3ee,#38bdf8);
+  --grad3: linear-gradient(135deg,#f472b6,#fb7185);
 }
 
 *{box-sizing:border-box}
@@ -21,58 +24,59 @@
 body{
   margin:0;
   font-family:'Inter',sans-serif;
-  background:
-    radial-gradient(800px 400px at 50% -10%, #e0e7ff, transparent),
-    var(--bg);
   color:var(--dark);
+  background:
+    radial-gradient(700px 400px at 10% -10%, #e0e7ff, transparent),
+    radial-gradient(600px 300px at 90% 10%, #dbeafe, transparent),
+    var(--bg);
 }
 
-/* ===== ANIMACJE ===== */
+/* ===== ANIM ===== */
 .reveal{
   opacity:0;
   transform:translateY(50px);
   transition:1s cubic-bezier(.19,1,.22,1);
 }
-.reveal.visible{
-  opacity:1;
-  transform:none;
-}
+.reveal.visible{opacity:1;transform:none}
 
 /* ===== HERO ===== */
 header{
-  padding:120px 20px 100px;
+  padding:130px 20px 110px;
   text-align:center;
 }
 
 header h1{
-  font-size:clamp(40px,6vw,64px);
+  font-size:clamp(42px,6vw,66px);
   font-weight:800;
+  margin-bottom:20px;
 }
 
 header span{
-  color:var(--accent);
+  background:var(--grad1);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
 }
 
 header p{
-  max-width:720px;
-  margin:24px auto 40px;
+  max-width:760px;
+  margin:0 auto 42px;
   font-size:20px;
   color:var(--muted);
 }
 
 .cta-main{
   display:inline-block;
-  padding:18px 40px;
-  background:var(--accent);
+  padding:18px 42px;
+  background:var(--grad1);
   color:#fff;
-  border-radius:14px;
+  border-radius:16px;
   font-weight:700;
   text-decoration:none;
-  transition:.3s;
+  transition:.35s;
 }
 .cta-main:hover{
-  transform:translateY(-3px);
-  box-shadow:0 20px 50px rgba(99,102,241,.35);
+  transform:translateY(-4px);
+  box-shadow:0 25px 60px rgba(99,102,241,.45);
 }
 
 /* ===== CONTAINER ===== */
@@ -83,7 +87,7 @@ header p{
 }
 
 .section-title{
-  font-size:36px;
+  font-size:38px;
   font-weight:800;
   margin-bottom:60px;
 }
@@ -92,38 +96,43 @@ header p{
 .projects{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-  gap:32px;
+  gap:34px;
 }
 
 .project{
   background:var(--card);
-  padding:34px;
-  border-radius:22px;
+  padding:36px;
+  border-radius:26px;
   box-shadow:0 20px 60px rgba(15,23,42,.08);
+  position:relative;
   transition:.4s;
 }
 
+.project::before{
+  content:"";
+  position:absolute;
+  inset:-1px;
+  border-radius:26px;
+  background:var(--grad2);
+  opacity:.0;
+  z-index:-1;
+  transition:.4s;
+}
+
+.project:hover::before{opacity:.35}
 .project:hover{
   transform:translateY(-10px);
-  box-shadow:0 30px 80px rgba(15,23,42,.15);
 }
 
-.project h3{
-  margin-top:0;
-  margin-bottom:12px;
-}
-
-.project p{
-  color:var(--muted);
-  margin-bottom:22px;
-}
+.project h3{margin-top:0}
+.project p{color:var(--muted);margin-bottom:24px}
 
 .project a{
   display:inline-block;
-  padding:12px 26px;
+  padding:13px 28px;
   background:var(--dark);
   color:#fff;
-  border-radius:12px;
+  border-radius:14px;
   text-decoration:none;
   font-weight:600;
 }
@@ -132,39 +141,34 @@ header p{
 .features{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-  gap:28px;
+  gap:30px;
 }
 
 .feature{
   background:var(--card);
-  padding:36px;
-  border-radius:22px;
+  padding:38px;
+  border-radius:26px;
   box-shadow:0 20px 60px rgba(15,23,42,.08);
+  transition:.35s;
 }
 
-.feature h4{
-  margin-top:0;
-  margin-bottom:10px;
+.feature:hover{
+  transform:translateY(-6px);
 }
 
-.feature p{
-  color:var(--muted);
-  line-height:1.6;
-}
+.feature h4{margin-top:0;margin-bottom:10px}
+.feature p{color:var(--muted);line-height:1.6}
 
 /* ===== CONTACT ===== */
 .contact{
-  background:linear-gradient(135deg,#6366f1,#818cf8);
+  background:var(--grad1);
   color:white;
-  border-radius:30px;
-  padding:80px 30px;
+  border-radius:34px;
+  padding:90px 30px;
   text-align:center;
 }
 
-.contact p{
-  font-size:18px;
-  margin:10px 0;
-}
+.contact p{font-size:18px;margin:10px 0}
 
 /* ===== FOOTER ===== */
 footer{
@@ -179,7 +183,7 @@ footer{
 
 <header class="reveal">
   <h1>Projektuję strony, które <span>sprzedają</span></h1>
-  <p>Nowoczesne, szybkie i dopracowane strony WWW dla firm, które chcą wyglądać profesjonalnie i zdobywać klientów.</p>
+  <p>Nowoczesne, dopracowane strony WWW dla firm, które chcą wyglądać profesjonalnie i zdobywać realnych klientów.</p>
   <a href="#projekty" class="cta-main">Zobacz realizacje</a>
 </header>
 
@@ -189,19 +193,19 @@ footer{
   <div class="projects">
     <div class="project reveal">
       <h3>🏋️ Trener Personalny</h3>
-      <p>Landing sprzedażowy z ofertą, pakietami treningowymi i formularzem kontaktowym zaprojektowanym pod konwersję.</p>
+      <p>Landing sprzedażowy z ofertą, pakietami i CTA zaprojektowanym pod konwersję.</p>
       <a href="trainer.html">Zobacz projekt</a>
     </div>
 
     <div class="project reveal">
       <h3>🍕 Pizzeria</h3>
-      <p>Nowoczesna strona restauracji z menu, godzinami otwarcia i szybkim kontaktem mobilnym.</p>
+      <p>Strona restauracji z menu, godzinami otwarcia i szybkim kontaktem mobilnym.</p>
       <a href="pizzeria_new.html">Zobacz projekt</a>
     </div>
 
     <div class="project reveal">
       <h3>💈 Barber</h3>
-      <p>Strona premium dla barbera – mocny branding, CTA i sekcja opinii klientów.</p>
+      <p>Premium strona barberska z brandingiem, opiniami i mocnym CTA.</p>
       <a href="barber_new.html">Zobacz projekt</a>
     </div>
   </div>
@@ -212,23 +216,23 @@ footer{
 
   <div class="features">
     <div class="feature reveal">
-      <h4>🚀 Szybkość i SEO</h4>
-      <p>Strony zoptymalizowane pod wydajność, Core Web Vitals i widoczność w Google.</p>
+      <h4>🚀 Wydajność & SEO</h4>
+      <p>Strony szybkie, lekkie i zoptymalizowane pod Google oraz konwersję.</p>
     </div>
 
     <div class="feature reveal">
       <h4>📱 Mobile-first</h4>
-      <p>Projektuję od telefonu w górę – idealny wygląd i użyteczność na każdym ekranie.</p>
+      <p>Projektuję od telefonu – idealny UX na każdym urządzeniu.</p>
     </div>
 
     <div class="feature reveal">
       <h4>🎯 Skupienie na sprzedaży</h4>
-      <p>Każdy element strony ma jeden cel: zamienić odwiedzającego w klienta.</p>
+      <p>Każdy element ma sens i prowadzi użytkownika do kontaktu.</p>
     </div>
 
     <div class="feature reveal">
-      <h4>🤝 Realna współpraca</h4>
-      <p>Stały kontakt, szybkie poprawki i partnerskie podejście – bez znikania po wdrożeniu.</p>
+      <h4>🤝 Partnerska współpraca</h4>
+      <p>Stały kontakt, szybkie poprawki i realne wsparcie po wdrożeniu.</p>
     </div>
   </div>
 </section>
@@ -260,5 +264,4 @@ document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 </body>
 </html>
   
-
  
