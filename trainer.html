@@ -1,92 +1,250 @@
-<!doctype html>
+ <!doctype html>
 <html lang="pl">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Trener Personalny – Damian</title>
-  <style>
-    :root{--accent:#0f1723;--cta:#ff6b35;--muted:#6b7280}
-    body{font-family:Inter, Arial, sans-serif;margin:0;background:#f7f8fb;color:#111}
-    .wrap{max-width:980px;margin:0 auto;padding:28px}
-    header{background:linear-gradient(90deg,#111 0%, rgba(17,24,35,0.85) 100%);color:#fff;padding:36px;border-radius:12px}
-    header h1{margin:0;font-size:28px}
-    header p{margin:8px 0 0;color:#d1d5db}
-    .grid{display:grid;grid-template-columns:1fr 320px;gap:20px;margin-top:20px}
-    .card{background:#fff;padding:18px;border-radius:10px;box-shadow:0 8px 24px rgba(15,23,42,0.06)}
-    .cta{display:inline-block;padding:10px 14px;background:var(--cta);color:#fff;border-radius:8px;text-decoration:none;font-weight:700}
-    .meta{color:var(--muted);font-size:14px;margin-top:8px}
-    .services{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:12px}
-    .service{background:#fff;border:1px solid #eef2f7;padding:12px;border-radius:8px}
-    .gallery{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
-    .gallery img{width:100%;max-width:140px;border-radius:8px;object-fit:cover}
-    footer{margin-top:30px;text-align:center;color:var(--muted);font-size:13px}
-    @media(max-width:880px){.grid{grid-template-columns:1fr}}
-  </style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Trener Personalny – Damian</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --dark:#0f1723;
+  --cta:#ff6b35;
+  --muted:#6b7280;
+  --bg:#f7f8fb;
+}
+
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family:Inter,system-ui,Arial,sans-serif;
+  background:var(--bg);
+  color:#111;
+}
+
+/* ===== WRAP ===== */
+.wrap{
+  max-width:1100px;
+  margin:0 auto;
+  padding:28px;
+}
+
+/* ===== HERO ===== */
+header{
+  position:relative;
+  background:
+    linear-gradient(120deg,rgba(15,23,35,.9),rgba(15,23,35,.7)),
+    url("https://images.unsplash.com/photo-1599058917212-d750089bc07b?auto=format&fit=crop&w=1600&q=80") center/cover;
+  color:#fff;
+  padding:60px 40px;
+  border-radius:18px;
+  overflow:hidden;
+  animation:fadeDown .9s ease;
+}
+
+header h1{
+  margin:0;
+  font-size:36px;
+  letter-spacing:.3px;
+}
+
+header p{
+  margin:12px 0 0;
+  color:#e5e7eb;
+  max-width:620px;
+  font-size:17px;
+}
+
+/* ===== GRID ===== */
+.grid{
+  display:grid;
+  grid-template-columns:1fr 340px;
+  gap:24px;
+  margin-top:30px;
+}
+
+/* ===== CARD ===== */
+.card{
+  background:#fff;
+  padding:22px;
+  border-radius:16px;
+  box-shadow:0 12px 30px rgba(15,23,42,.08);
+  animation:fadeUp .8s ease;
+}
+
+.card h2,.card h3{
+  margin-top:0;
+}
+
+/* ===== META ===== */
+.meta{
+  color:var(--muted);
+  font-size:14px;
+}
+
+/* ===== PACKAGES ===== */
+.services{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:14px;
+  margin-top:14px;
+}
+
+.service{
+  border:1px solid #eef2f7;
+  padding:14px;
+  border-radius:12px;
+  transition:.3s;
+  background:#fff;
+}
+
+.service:hover{
+  transform:translateY(-4px);
+  box-shadow:0 10px 22px rgba(15,23,42,.12);
+  border-color:transparent;
+}
+
+/* ===== CTA ===== */
+.cta{
+  display:inline-block;
+  padding:14px 22px;
+  background:linear-gradient(135deg,#ff6b35,#ff8c5a);
+  color:#fff;
+  border-radius:12px;
+  text-decoration:none;
+  font-weight:700;
+  letter-spacing:.3px;
+  transition:.3s;
+}
+
+.cta:hover{
+  transform:translateY(-3px);
+  box-shadow:0 14px 30px rgba(255,107,53,.45);
+}
+
+/* ===== GALLERY ===== */
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:10px;
+  margin-top:12px;
+}
+
+.gallery img{
+  width:100%;
+  height:140px;
+  border-radius:14px;
+  object-fit:cover;
+  transition:.4s;
+}
+
+.gallery img:hover{
+  transform:scale(1.05);
+}
+
+/* ===== ASIDE ===== */
+aside .card{animation:fadeUp 1s ease}
+
+/* ===== FOOTER ===== */
+footer{
+  margin-top:40px;
+  text-align:center;
+  color:var(--muted);
+  font-size:13px;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(30px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+@keyframes fadeDown{
+  from{opacity:0;transform:translateY(-30px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:900px){
+  .grid{grid-template-columns:1fr}
+  header{padding:40px 26px}
+  header h1{font-size:30px}
+}
+</style>
 </head>
+
 <body>
-  <div class="wrap">
-    <header>
-      <h1>Trening z Damianem — Trener Personalny</h1>
-      <p>Indywidualne plany treningowe, treningi 1:1 oraz online. Popraw formę, redukcję i siłę.</p>
-    </header>
+<div class="wrap">
 
-    <div class="grid">
-      <div>
-        <div class="card">
-          <h2>O mnie</h2>
-          <p class="meta">Jestem pasjonatem treningu siłowego i kondycyjnego. Pomagam klientom osiągać cele przez prosty, bezpieczny i efektywny plan treningowy.</p>
+<header>
+  <h1>Trening z Damianem — Trener Personalny</h1>
+  <p>Indywidualne plany treningowe, treningi 1:1 oraz online. Buduj formę, siłę i sylwetkę świadomie.</p>
+</header>
 
-          <h3 style="margin-top:14px">Pakiety</h3>
-          <div class="services">
-            <div class="service"><strong>Start — 99 zł</strong><div class="meta">Plan 4 tygodnie + telefoniczne wsparcie</div></div>
-            <div class="service"><strong>Pro — 149 zł</strong><div class="meta">Plan + 2 sesje online + dieta (podstawy)</div></div>
-            <div class="service"><strong>Premium — 249 zł</strong><div class="meta">Plan + 4 sesje 1:1 + pełna dieta</div></div>
-            <div class="service"><strong>Online — 79 zł</strong><div class="meta">Plan + kontakt przez 30 dni</div></div>
-          </div>
+<div class="grid">
+  <main>
+    <div class="card">
+      <h2>O mnie</h2>
+      <p class="meta">
+        Jestem pasjonatem treningu siłowego i kondycyjnego. Pracuję z osobami,
+        które chcą realnych efektów bez chaosu i kontuzji.
+      </p>
 
-          <h3 style="margin-top:14px">Co dostajesz</h3>
-          <ul style="margin-top:6px">
-            <li>Indywidualny program</li>
-            <li>Progres tracking</li>
-            <li>Szybka komunikacja</li>
-          </ul>
-
-          <div style="margin-top:14px">
-            <a class="cta" href="mailto:kubondamian@gmail.com">Napisz: kubondamian@gmail.com</a>
-            <div class="meta" style="margin-top:8px">Telefon: 729 623 364</div>
-          </div>
-        </div>
-
-        <div class="card" style="margin-top:14px">
-          <h3>Opinie / Rezultaty</h3>
-          <p class="meta">„Szybkie efekty i profesjonalne podejście — polecam.”</p>
-          <p class="meta">„Plan dopasowany do mojej pracy i grafiku.”</p>
-        </div>
+      <h3 style="margin-top:18px">Pakiety</h3>
+      <div class="services">
+        <div class="service"><strong>Start — 99 zł</strong><div class="meta">Plan 4 tygodnie + wsparcie</div></div>
+        <div class="service"><strong>Pro — 149 zł</strong><div class="meta">Plan + 2 sesje online + dieta</div></div>
+        <div class="service"><strong>Premium — 249 zł</strong><div class="meta">Plan + 4 sesje 1:1 + pełna dieta</div></div>
+        <div class="service"><strong>Online — 79 zł</strong><div class="meta">Plan + kontakt 30 dni</div></div>
       </div>
 
-      <aside>
-        <div class="card">
-          <h3>Galeria</h3>
-          <div class="gallery">
-            <!-- Jeżeli nie masz zdjęć, możesz później podmienić na własne albo dodać linki do obrazków z internetu -->
-            <img src="trainer1.jpg" alt="trainer1">
-            <img src="trainer2.jpg" alt="trainer2">
-            <img src="trainer3.jpg" alt="trainer3">
-          </div>
-        </div>
+      <h3 style="margin-top:18px">Co dostajesz</h3>
+      <ul>
+        <li>Indywidualny program</li>
+        <li>Monitoring progresu</li>
+        <li>Szybki kontakt</li>
+      </ul>
 
-        <div class="card" style="margin-top:12px">
-          <h3>Godziny</h3>
-          <p class="meta">Pn–Pt: 6:00–21:00 • Sb: 8:00–14:00</p>
-          <h3 style="margin-top:10px">Lokalizacja</h3>
-          <p class="meta">Tarnów / Trening w siłowni lub online</p>
-        </div>
-      </aside>
+      <div style="margin-top:18px">
+        <a class="cta" href="mailto:kubondamian@gmail.com">Umów trening</a>
+        <div class="meta" style="margin-top:10px">📞 729 623 364</div>
+      </div>
     </div>
 
-    <footer>
-      © Damian Kuboń — Strony i usługi treningowe • Kontakt: 729 623 364
-    </footer>
-  </div>
+    <div class="card" style="margin-top:18px">
+      <h3>Opinie</h3>
+      <p class="meta">„Efekty widoczne po kilku tygodniach. Konkretnie i profesjonalnie.”</p>
+      <p class="meta">„Plan idealnie dopasowany do mojego trybu życia.”</p>
+    </div>
+  </main>
+
+  <aside>
+    <div class="card">
+      <h3>Galeria</h3>
+      <div class="gallery">
+        <img src="https://images.unsplash.com/photo-1579758682665-53a1a614eea6?auto=format&fit=crop&w=600&q=80">
+        <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=600&q=80">
+        <img src="https://images.unsplash.com/photo-1594737625785-cf9d4f2f79d1?auto=format&fit=crop&w=600&q=80">
+        <img src="https://images.unsplash.com/photo-1584467735871-bc9d8bb3be8b?auto=format&fit=crop&w=600&q=80">
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:14px">
+      <h3>Godziny</h3>
+      <p class="meta">Pn–Pt: 6:00–21:00<br>Sb: 8:00–14:00</p>
+      <h3 style="margin-top:12px">Lokalizacja</h3>
+      <p class="meta">Tarnów / siłownia lub online</p>
+    </div>
+  </aside>
+</div>
+
+<footer>
+  © Damian Kuboń — Trener Personalny
+</footer>
+
+</div>
 </body>
 </html>
+
